@@ -1,0 +1,45 @@
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="ComeBack()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="recipient-name" class="control-label">Mã Sản Phẩm</label>
+                <input type="text" value= "MaSP"class="form-control" id="recipient-name"  [(ngModel)]="customer1.MaKH" [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label" >Tên Sản Phẩm</label>
+                <input type="text" value= "TenSP" class="form-control" id="recipient-name" [(ngModel)]="customer1.TenKH" [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="form-group">
+                  <label for="recipient-name" class="control-label" >Đơn Vị Tính</label>
+                  <input type="text" value= "DVT" class="form-control" id="recipient-name"  [(ngModel)]="customer1.DiaChiB" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="control-label" >Mã Số THuế</label>
+                  <input type="text" value= "MSTA"class="form-control" id="recipient-name"  [(ngModel)]="customer1.MaSTB" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="control-label" >Chứ Ký Số </label>
+                  <input type="text" value= "MSTA"class="form-control" id="recipient-name"  [(ngModel)]="customer1.ChuKySo" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="control-label" >Chứ ký Điện Tử</label>
+                  <input type="text" value= "MSTA"class="form-control" id="recipient-name"  [(ngModel)]="customer1.ChuKyDT" [ngModelOptions]="{standalone: true}">
+                </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" (click)="ComeBack()">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onEditCourse()">Lưu Trữ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+

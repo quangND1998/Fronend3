@@ -1,0 +1,46 @@
+
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"  >AddCustomer</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" ><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="exampleModalLabel">Khách Hàng</h4>
+        </div>
+        <div class="modal-body">
+          <form ngDefaultControl>
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">Mã Khách Hàng</label>
+              <input type="text" value= "MaCQT"class="form-control" id="recipient-name"  [(ngModel)]="customer.MaKH" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="control-label" >Tên Khách Hàng:</label>
+              <input type="text" value= "TenCQT" class="form-control" id="recipient-name" [(ngModel)]="customer.TenKH" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label for="recipient-name" class="control-label" >Địa Chỉ Khách Hàng:</label>
+                <input type="text" value= "TenCQT" class="form-control" id="recipient-name"  [(ngModel)]="customer.DiaChiB" [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label" >Mã Số Thuế Khách Hàng:</label>
+                <input type="text" value= "TenCQT" class="form-control" id="recipient-name"  [(ngModel)]="customer.MaSTB" [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label" >Chứ Ký Số :</label>
+                <input type="text" value= "TenCQT" class="form-control" id="recipient-name"  [(ngModel)]="customer.ChuKySo" [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label" >Chứ Ký Điện Tử:</label>
+                <input type="text" value= "TenCQT" class="form-control" id="recipient-name"  [(ngModel)]="customer.ChuKyDT" [ngModelOptions]="{standalone: true}">
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onAddCourse()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

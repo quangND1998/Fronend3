@@ -1,0 +1,47 @@
+<div style="display: inline-flex;">
+    <div> <img src="assets/images/bag.PNG" alt="" style="margin-top: 20px;margin-left: 10px; " ></div>
+ <div style="color: blue;margin-top: 22px; padding-left: 5px;" >DANH SÁCH SẢN PHẨM</div>
+ </div>
+ <hr>
+        <button type="button" class="btn btn-primary" (click)="ComebackHome()" >Trang Chủ</button>
+
+        <app-cthdadd></app-cthdadd>
+ 
+ <div>
+     <table  class="table table-hover" style="border-left: 1px ridge;">
+         <thead>
+             <tr  style=" background-color: rgb(0, 183, 255)">
+                 <th>Số Hóa Đơn</th>
+                 <th>Mã Hóa Đơn Chi TIết </th>
+                 <th>Mã Sản Phẩm</th>
+                 <th>Số LƯợng</th>
+                 <th>Giá</th>
+                 <th>Ghi  Chú</th>
+                 <th>Sửa</th>
+                 <th>Xóa</th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr *ngFor="let recipt of detailRecipts">
+                 <td>{{recipt.SoHD}}</td>
+                 <td>{{recipt.MaHDCT}}</td>
+                 
+                 <td>{{recipt.MaSP}}</td>
+                 <td>{{recipt.Soluong}}</td>
+                 <td>{{recipt.Gia}}</td>
+                 <td>{{recipt.GhiChu}}</td>
+                
+                 <td>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"  [routerLink]="['/chitiethoadon',recipt.MaHDCT,'edit']">
+                        EditProduct
+                      </button>
+                      <app-cthdedit></app-cthdedit>
+                </td>
+                 
+                       <!-- routerlink chạy đến courses/id/edit -->
+                       
+                <td><button type="button" class="btn btn-warning" (click)="onDeleteCourses(recipt.MaSP)">Delete</button></td>
+             </tr>
+         </tbody>
+     </table>
+ </div>

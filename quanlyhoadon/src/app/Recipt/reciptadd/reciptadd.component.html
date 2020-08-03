@@ -1,0 +1,127 @@
+
+
+
+
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"  >AddCustomer</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" ><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="exampleModalLabel">Hóa Đơn</h4>
+        </div>
+        <div class="modal-body">
+          <form  [formGroup]="fromRecipt"
+                  autocomplete="false" 
+                  novalidate="true">
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">Số Hóa Đơn</label>
+              <input 
+                    type="number" 
+                    
+                    class="form-control" 
+                    name="txtSoHD" 
+                    formControlName="SoHD"
+                    [(ngModel)]="recipt.SoHD">
+            </div>
+            <span class="label label-danger" 
+                    *ngIf="fromRecipt.controls.SoHD.dirty 
+                    && fromRecipt.controls.SoHD.errors?.required">
+                      Vui lòng nhập Số Hóa Đơn</span>
+            <div class="form-group">
+              <label for="recipient-name" class="control-label" >Mã Khách Hàng </label>
+              <input 
+                    type="number"
+                    
+                      class="form-control" 
+                      name="txtMaKH" 
+                      formControlName="MaKH"
+                      [(ngModel)]="recipt.MaKH"
+                      >
+            </div>
+                  <span class="label label-danger" 
+                  *ngIf="fromRecipt.controls.MaKH.dirty 
+                  && fromRecipt.controls.MaKH.errors?.required">
+                    Vui lòng nhập Mã Sản Phẩm</span>
+            <div class="form-group">
+                <label for="recipient-name" class="control-label" >Ngày Lập</label>
+                <input 
+                    type="date"
+        
+                     class="form-control"
+                     name="txtNgayLap" 
+                     formControlName="NgayLap"
+                       [(ngModel)]="recipt.NgayLap" 
+                      >
+              </div>
+              <span class="label label-danger" 
+                      *ngIf="fromRecipt.controls.NgayLap.dirty 
+                    && fromRecipt.controls.NgayLap.errors?.required">
+                      Vui lòng nhập Mã Sản Phẩm</span>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label" >Tên Hóa Đơn</label>
+                <input 
+                  type="text" 
+                  value= "TenCQT" 
+                  class="form-control"
+                  name="txtTenHD" 
+                  formControlName="TenHD"
+                   [(ngModel)]="recipt.TenHD"
+                   >
+              </div>
+              <span class="label label-danger" 
+                      *ngIf="fromRecipt.controls.TenHD.dirty 
+                            && fromRecipt.controls.TenHD.errors?.required">
+                        Vui lòng nhập Mã Sản Phẩm</span>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label" >KHHD</label>
+                <input type="text" 
+                    value= "TenCQT" 
+                    class="form-control"
+                    name="txtKHHD" 
+                      formControlName="KHHD"
+                    [(ngModel)]="recipt.KHHD" >
+              </div>
+              <span class="label label-danger" 
+                        *ngIf="fromRecipt.controls.KHHD.dirty 
+                      && fromRecipt.controls.KHHD.errors?.required">
+                        Vui lòng nhập Mã Sản Phẩm</span>
+              <div class="form-group">
+                  <label for="recipient-name" class="control-label" >KHMSHD</label>
+                  <input type="text"
+                   value= "TenCQT"
+                    class="form-control"
+                    name="txtKHMSHD" 
+                    formControlName="KHMSHD"
+                      [(ngModel)]="recipt.KHMSHD">
+                </div>
+                <span class="label label-danger" 
+                        *ngIf="fromRecipt.controls.KHMSHD.dirty 
+                        && fromRecipt.controls.KHMSHD.errors?.required">
+                         Vui lòng nhập Mã Sản Phẩm</span>
+                <div class="form-group">
+                  <label for="recipient-name" class="control-label" >VAT</label>
+                  <input 
+                    type="text" 
+                    value= "TenCQT" 
+                    class="form-control" 
+                    name="txtVAT" 
+                      formControlName="VAT"
+                     [(ngModel)]="recipt.VAT" >
+                </div>
+                <span class="label label-danger" 
+                        *ngIf="fromRecipt.controls.VAT.dirty 
+                        && fromRecipt.controls.VAT.errors?.required">
+                          Vui lòng nhập Mã Sản Phẩm</span>
+           
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button (click)="onResetForm()" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onAddProduct()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

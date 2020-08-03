@@ -1,0 +1,87 @@
+
+  
+
+
+
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"  >AddCustomer</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" ><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="exampleModalLabel">Khách Hàng</h4>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="fromProduct"
+                autocomplete="false" 
+                novalidate="true"
+                >
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">Mã Sản Phẩm</label>
+              <input 
+                  type="text"
+                  
+                  class="form-control"
+                 
+                   name="txtMaSP" 
+                   formControlName="MaSP"
+                   [(ngModel)]="product.MaSP">
+            </div>
+            <span class="label label-danger" 
+            *ngIf="fromProduct.controls.MaSP.dirty && fromProduct.controls.MaSP.errors?.required">Vui lòng nhập Mã Sản Phẩm</span>
+            <div class="form-group">
+              <label for="recipient-name" class="control-label" >Tên Sản Phẩm</label>
+              <input type="text"
+                    
+                    class="form-control"
+                   
+                     name="txtTenSP" 
+                     formControlName="TenSP"
+                     [(ngModel)]="product.TenSP"
+                     >
+            </div>
+            <span class="label label-danger" 
+                    *ngIf="fromProduct.controls.TenSP.dirty 
+                    && fromProduct.controls.TenSP.errors?.required">Vui lòng nhập Tên Sản Phẩm</span>
+            <div class="form-group">
+                <label for="recipient-name" class="control-label" >Đơn Vị Tính</label>
+                <input 
+                      type="text"
+                       
+                        class="form-control"
+                        
+                         name="txtDVT" 
+                        formControlName="DVT"
+                        [(ngModel)]="product.DVT"
+                           >
+              </div>
+              
+              <span class="label label-danger" 
+                    *ngIf="fromProduct.controls.DVT.dirty && fromProduct.controls.DVT.errors?.required">Vui lòng nhập Đơn VỊ Tính</span>
+              
+              <div class="form-group">
+                <label for="recipient-name" class="control-label" >Mã Số THuế</label>
+                <input 
+                      type="text"
+                       class="form-control"
+                       name="txtMSTA" 
+                       formControlName="MSTA"
+                       [(ngModel)]="product.MSTA"
+                       
+                        >
+              </div>
+              <span class="label label-danger" 
+              *ngIf="fromProduct.controls.MSTA.dirty
+               && fromProduct.controls.MSTA.errors?.required">Vui lòng nhập Mã Số Thuế</span>
+           
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button (click)="onResetForm()" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal"  (click)="onSubmitForm()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

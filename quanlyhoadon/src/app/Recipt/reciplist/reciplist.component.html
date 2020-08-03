@@ -1,0 +1,49 @@
+<div style="display: inline-flex;">
+    <div> <img src="assets/images/bag.PNG" alt="" style="margin-top: 20px;margin-left: 10px; " ></div>
+ <div style="color: blue;margin-top: 22px; padding-left: 5px;" >DANH SÁCH SẢN PHẨM</div>
+ </div>
+ <hr>
+ <button type="button" class="btn btn-primary" (click)="ComebackHome()" >Trang Chủ</button>
+
+        <app-reciptadd></app-reciptadd>
+ 
+ <div>
+     <table  class="table table-hover" style="border-left: 1px ridge;">
+         <thead>
+             <tr  style=" background-color: rgb(0, 183, 255)">
+                 <th>Số Hóa Đơn</th>
+                 <th>Mã Khách Hàng </th>
+                 <th>Ngày Lập</th>
+                 <th>Tên Hóa Đơn</th>
+                 <th>KHHD </th>
+                 <th>KHMSHD</th>
+                 <th>VAT</th>
+                 <th>Sửa</th>
+                 <th>Xóa</th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr *ngFor="let recipt of recipts">
+                 <td>{{recipt.SoHD}}</td>
+                 <td>{{recipt.MaKH}}</td>
+                 
+                 <td>{{recipt.NgayLap | date:'dd/MM/yyyy'}}</td>
+                 <td>{{recipt.TenHD}}</td>
+                 <td>{{recipt.KHHD}}</td>
+                 <td>{{recipt.KHMSHD}}</td>
+                 <td>{{recipt.VAT}}</td>
+                
+                 <td>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"  [routerLink]="['/recipts',recipt.SoHD,'edit']">
+                        EditProduct
+                      </button>
+                      
+                </td>
+                 
+                       <!-- routerlink chạy đến courses/id/edit -->
+                       
+                <td><button type="button" class="btn btn-warning" (click)="onDeleteCourses(recipt.SoHD)">Delete</button></td>
+             </tr>
+         </tbody>
+     </table>
+ </div>

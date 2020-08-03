@@ -1,0 +1,54 @@
+<!-- 
+
+
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+           
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onEditCourse()">Lưu Trữ</button>
+        </div>
+      </div>
+    </div>
+     -->
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Cơ Quan thuế</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <div class="form-group">
+                
+                <label for="recipient-name" class="control-label">Ma Co Quan Thue:</label>
+                <input type="text" value= "MaCQT"class="form-control" id="recipient-name"  [(ngModel)]="taxAuthoritie1.MaCQT" [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label" >Tên Cơ Quan Thuế:</label>
+                <input type="text" value= "TenCQT" class="form-control" id="recipient-name"  [(ngModel)]="taxAuthoritie1.TenCQT" [ngModelOptions]="{standalone: true}">
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onEditCourse()">Lưu Trữ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+

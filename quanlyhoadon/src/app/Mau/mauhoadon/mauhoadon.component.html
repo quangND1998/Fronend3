@@ -1,0 +1,273 @@
+
+
+
+<div class="form-group">
+    <label for="recipient-name" class="control-label">Số Hóa Đơn</label>
+
+<div style="display: inline-flex;">
+    <div> <img src="assets/images/bag.PNG" alt="" style="margin-top: 20px;margin-left: 10px; " ></div>
+ <div style="color: blue;margin-top: 22px; padding-left: 5px;" >DANH SÁCH SẢN PHẨM</div>
+ </div>
+ <hr>
+ <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="text" value= "SoHD"class="form-control" id="recipient-name"  #id>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+   
+    <button type="submit" class="btn btn-primary" (click)="LoadDataProduct(id.value)">Submit</button>
+  </form>
+
+</div>
+ <!-- <button type="button" class="btn btn-primary" (click)="ComebackHome()" >Trang Chủ</button>
+
+        <app-reciptadd></app-reciptadd>
+ 
+ <div>
+     <table  class="table table-hover" style="border-left: 1px ridge;">
+         <thead>
+             <tr  style=" background-color: rgb(0, 183, 255)">
+      
+     
+
+                 <th>Tên Khách Hàng</th>
+                 <th>Địa Chỉ Khách Hàng</th>
+                 <th>Mã Số Thuế B </th>
+                 <th>Mã Sản Phẩm</th>
+                 <th>Tên Sản Phẩm</th>
+                 <th>Đơn Vị Tính</th>
+                 <th>Số Lượng</th>
+                 <th>Giá </th>
+                 <th>Ngày Lập </th>
+                 <th>VAT</th>
+                 <th>Amount</th>
+                 <th>Thành Tiền </th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr >
+                 <td>{{recipt.TenKH}}</td>
+                 <td>{{recipt.DiaChiB}}</td>
+                 
+                 <td>{{recipt.MaSTB}}</td>
+                 <td>{{recipt.MaSP}}</td>
+                 <td>{{recipt.TenSP}}</td>
+                 <td>{{recipt.DVT}}</td>
+                 <td>{{recipt.SoLuong}}</td>
+                 <td>{{recipt.Gia}}</td>
+                 <td>{{recipt.NgayLap}}</td>
+                 <td>{{recipt.VAT}}</td>
+                 <td>{{recipt.Amount}}</td>
+                 <td>{{TotalAfterVat(recipt)}}</td>
+
+
+             </tr>
+         </tbody>
+     </table>
+        <button type="button" class="btn btn-primary" (click)="TotalProduct()">button</button>
+     
+ </div> -->
+
+
+ <!--  -->
+ 
+    
+<div style="margin-left: 35px;">
+       
+</div>
+<div class="khungmau" style="border:2px solid black;width:870px;border-image:url(data:image/jpeg;base64,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) 30 round;border-width:20px;z-index:1">
+
+
+<!-- Ch? này em chèn 2 ?nh ?  ##########################-->
+<img src="anhnenmau2.jpg" alt="" width="600px" height="600px"  style="z-index: -4;padding-left: 100px; opacity: 0.5;filter: alpha(opacity=50);padding-top: 200px;position: absolute;">
+<img src="images1.png" alt="" width="250px" height="250px"  style="z-index:-2;padding-left:280px; opacity: 0.6;filter: alpha(opacity=100);padding-top: 375px;position: absolute;">
+    <!-- 
+##################### -->
+
+
+
+
+
+           
+    <div style="display: inline-flex; height: 120px; margin-top: 3px;">
+        <div style="margin-left: 15px;width: 100px; height: 100px;">
+            <div>
+                <img src="" alt="" width="100px" height="100px">
+            </div>
+        </div>
+
+       <div id="khung1"><b class="tieude">Đơn vị bán hàng:</b><br>
+         <b class="tieude1"> Mã số thuế</b>
+         <p style="padding-top:3px;padding-bottom:3px;padding-left:20px ;">Địa chỉ (Address): </p>
+         <p style="padding-top:1px;padding-bottom:1px;padding-left:20px ;">Điện thoại (Tel): </p> 
+         <p style="padding-top:1px;padding-bottom:1px;padding-left:20px ;">Website:</p>
+         <p style="padding-top:1px;padding-bottom:1px;padding-left:20px ;">Số tài khoản (Account No)<p>
+       </div>
+        <div id="khung2">
+            <b >C Ô N G &nbsp;T Y &nbsp;T N H H &nbsp;M ? C &nbsp;I N &nbsp;B ? O &nbsp;T Í N</b><br>
+           
+            <b>0 3 0 4 8 1 8 7 4 2</b><br>
+            <p>220/59 Lê Van S? ,Phu?ng 14 ,Qu?n 3,TP H? Chí Minh,Vi?t Nam.</p>    
+            <p style=" padding-bottom: 5px;">(028) 62906660 /(028) 62906663</p>    
+            <span style="padding-top: 10px; padding-bottom: 5px; ">https://www.cisbaotin.com</span><span style="margin-left:20p">Email: info@cisbaotin.com</span> <br>
+            <p style="padding-top: 5px;">00406072.0001<span style="margin-left: 20px;">T?i: ngân hàng Ðông Á-CN Qu?n 3, TP.HCM</span>   </p>
+        
+    </div>
+    </div>
+
+    <hr style="margin-left: 20px;margin-right: 20px; margin-top: 20px;">
+
+    
+    <div id="container">
+        <div id="infoLeft">
+            <Strong><h4 style="padding-left: 20px; text-align: center;" >HÓA ĐƠN GIÁ TRỊ GIA TĂNG</h4></Strong>
+        </div>
+        <div id="infoRinght">
+            
+            <p>
+               M?u s? <span>01GTK0/001</span>
+            </p>
+            <p style="margin-top: 10px;">
+                Ký hi?u : <b>BT/20E</b>
+            </p>
+            <p style="margin-top:10px; "> S?  <span style="color: red;">00000000</span></p>
+        </div>
+    </div>
+  
+    <div id="container">
+        <div id="infoLeft1">
+            <p>Họ tên người mua hàng :</p>
+            <p style="padding-top:16px;padding-bottom:3px">Tên đơn vị:   </p>
+            <p style="padding-top:16px;padding-bottom:3px">Mã số thuế :</p>
+            <p style="padding-top:16px;padding-bottom:3px">Địa chỉ : </p>
+            <p style="padding-top:16px;padding-bottom:3px">Hình thức thanh toán :  </p>
+        </div>
+        <div id="infoRinght1">
+            <h4 style="margin-top:3px;margin-bottom:3px"><b>{{TenKH}}</b></h4>
+            <p style="padding-top: 16px;">
+                CÔNG TY CỔ PHẦN CÔNG NGHỆ THẺ NACENCOMM
+            </p>
+            <p style="margin-top: 25px;">
+                {{MaSTB}}
+            </p>
+            <p style="margin-top:10px">Phòng 20 Tầng 8, Tòa nhà Detech II, 107 Nguyễn Phong Sắc, Phường Dịch Vọng Hậu, Quận Cầu Giấy, Thành phố Hà Nội, Việt Nam</p>
+            <p style="margin-top:10px" >
+                TM &emsp;S? tài kho?n (Account No):     10321656622015
+            </p>
+        </div>
+    </div>
+    <strong style="padding-left: 350px; margin-top: 3px; width: 300px; ">param2 </strong>
+    <table style="width:95%;margin-left: 20px;margin-right: 20px;"> 
+      
+       
+        <tr >
+          <th style="width:30px">STT (No.) </th>
+          <th style="width:300px;text-align: center;">Tên hàng hóa, dịch vụ   
+            <br>(Description of goods, service) </th>
+          <th>ÐVT   
+            <br>(Unit)</th>
+          <th  style="width:40px">Số lượng
+            (Quantity)</th>
+          <th >Đơn giá 
+            <br>(Unit price)</th>
+          <th>Thành tiền
+            <br>(Amount) </th>
+            
+        </tr>
+        <tr>
+            <th style="width:30px">1 </th>
+            <th style="width:300px">2</th>
+            <th>3</th>
+            <th  style="width:40px">4</th>
+            <th>5</th>
+            <th>6=5x4</th>
+              
+          </tr>
+
+        
+        <tr *ngFor="let recipt of recipt1; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{recipt.TenSP}}</td>
+            <td>{{recipt.DVT}}</td>
+            <td>{{recipt.SoLuong}}</td>
+            <td>{{recipt.Gia}}</td>
+            <td>{{TotalAfterVat(recipt)}}</td>
+         
+        </tr>
+       
+           
+        
+        
+        <tr>
+            <td colspan = "6" style="padding-left: 550px;">Cộng tiền hàng (Total)   </td>
+        </tr>
+        <tr>
+            <td colspan = "6" >Thuế suất GTGT (VAT rate):10%    <span style="padding-left: 280px;">Tiền thuế GTGT (VAT value):  </span> </td>
+        </tr>
+        <tr>
+            <td colspan = "6" style="padding-left: 420px;">Tổng cộng tiền thanh toán (Total payment): </td>
+        </tr>
+        <tr>
+            <td colspan = "6" >S? ti?n vi?t b?ng ch? (In words):Ba muoi nghìn./. </td>
+        </tr>
+       
+    
+           
+  
+      </table>
+
+
+      <!--  -->
+      <div style="display: inline-flex; height: 120px;">
+        <div style="margin-left: 15px;width:300px; height: 100px;">
+            <div style="padding-left: 5px;">
+                Người mua hàng <i>(Buyer) </i>
+               <br> <p style="padding-left: 30px;">(Ký, ghi rõ họ tên) </p>
+               <i style="padding-left: 5px; padding-top: 3px;">
+                    (Signature and full name) 
+
+                </i>
+            </div>
+        </div> 
+
+
+
+
+   
+        <div id="chuki2">
+            <div style="padding-left: 0px;">
+                Người bán hàng<i>(Seller) </i>
+               <br> <p style="padding-left: 30px;">(Ký, ghi rõ họ tên)</p>
+               <i style="padding-left: 10px; padding-top: 3px;">
+                    (Signature and full name) 
+
+                </i>
+            </div>
+       
+        
+    </div>
+    </div>
+  
+    
+    <div class="xacnhan" style="color: red;margin-left: 600px; position: absolute; float: right;"> 
+        <img src="check.jpg" alt="" width="50px" height="50px"><strong>Signature valid</strong>  <br>
+        Được ký bởi:CÔNG TY CỔ PHẦN CÔNG NGHỆ THẺ NACENCOMM<br>
+        Ngày ký: 01-12-2018</div>
+
+        
+        <p style="text-align: center;margin-top: 100px;">
+            (Cần kiểm tra đối chiếu khi lập, giao, nhận hoá đơn)
+
+
+        </p>
+</div>
+<div  style="margin-left:450px;margin-top: 5px;width: 50%;">
+    
+        Chu?i xác th?c (Digest Value):<strong> zUK3uMk4OMXzptwY1ygbSDympn4= </strong> <br>
+         <i>Tra c?u hóa don t?i d?a ch? trang web: http://hddt.nacencomm.vn </i><br>
+       <p style="margin-left:200px"> param3 </p>
+</div>
+<div style="left: 65px; top: -700px; width: 900px; height: 15px; text-align: left; padding-top: 0px; padding-bottom: 10px; font-size: 11.5pt; float: right; position: relative; transform: rotate(-90deg); text-align: center; -webkit-transform: rotate(-90deg);">
+   <i>    Giải pháp hóa đơn điện tử được cung cấp bởi:  <b>Công ty cổ phần công nghệ thẻ Nacencomm.</b> Mã s? thu?:<b> 0103930279.  </b></i>
+</div>

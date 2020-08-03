@@ -1,0 +1,49 @@
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" (click)="ComeBack()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="recipient-name" class="control-label">Số Hóa Đơn</label>
+                <input type="text" value= "SoHD"class="form-control" id="recipient-name"  [(ngModel)]="recipt1.SoHD" [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label" >Mã Khách Hàng </label>
+                <input type="text" value= "MaKH" class="form-control" id="recipient-name" [(ngModel)]="recipt1.MaKH" [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="form-group">
+                  <label for="recipient-name" class="control-label" >Ngày Lập</label>
+                  <input type="date" value= "NgayLap" class="form-control" id="recipient-name"  [(ngModel)]="recipt1.NgayLap" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="control-label" >Tên Hóa Đơn</label>
+                  <input type="text" value= "TenHD" class="form-control" id="recipient-name"  [(ngModel)]="recipt1.TenHD" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="control-label" >KHHD</label>
+                  <input type="text" value= "KHHD" class="form-control" id="recipient-name" [(ngModel)]="recipt1.KHHD" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="control-label" >KHMSHD</label>
+                    <input type="text" value= "KHMSHD" class="form-control" id="recipient-name"  [(ngModel)]="recipt1.KHMSHD" [ngModelOptions]="{standalone: true}">
+                  </div>
+                  <div class="form-group">
+                    <label for="recipient-name" class="control-label" >VAT</label>
+                    <input type="text" value= "VAT" class="form-control" id="recipient-name"  [(ngModel)]="recipt1.VAT" [ngModelOptions]="{standalone: true}">
+                  </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" (click)="ComeBack()">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onEditRecipt()">Lưu Trữ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+

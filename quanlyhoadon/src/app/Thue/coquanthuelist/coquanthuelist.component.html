@@ -1,0 +1,39 @@
+<div style="display: inline-flex;">
+    <div> <img src="assets/images/bag.PNG" alt="" style="margin-top: 20px;margin-left: 10px; " ></div>
+ <div style="color: blue;margin-top: 22px; padding-left: 5px;" >DANH SÁCH CƠ QUAN THUẾ</div>
+ </div>
+ <hr>
+ <button type="button" class="btn btn-primary" (click)="ComebackHome()" >Trang Chủ</button>
+ <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"   >ADD Courses  </button>
+    <app-coquanthueadd></app-coquanthueadd>
+ <div>
+     <table  class="table table-hover" style="border-left: 1px ridge;">
+         <thead>
+             <tr  style=" background-color: rgb(0, 183, 255)">
+                 <th>Mã Cơ Quan Thuế</th>
+                 <th>Tên Cơ Quan Thuế </th>
+               
+                 <th>Sửa</th>
+                 <th>Xóa</th>
+                
+             </tr>
+         </thead>
+         <tbody>
+             <tr *ngFor="let taxAuthoritie of taxAuthorities">
+                 <td>{{taxAuthoritie.MaCQT}}</td>
+                 <td>{{taxAuthoritie.TenCQT}}</td>
+                 <td>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"  [routerLink]="['/taxAuthorities',taxAuthoritie.MaCQT,'edit']">
+                      EditCustomer
+                    </button>
+                    <app-coquanthueedit></app-coquanthueedit>
+                   
+              </td>
+                       
+                <td><button type="button" class="btn btn-warning" (click)="onDeleteCourses(taxAuthoritie.MaCQT)">Delete</button></td>
+                
+            </tr>
+
+         </tbody>
+     </table>
+ </div>

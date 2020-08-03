@@ -1,0 +1,103 @@
+
+
+
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" >AddCustomer</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" ><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="exampleModalLabel">Khách Hàng</h4>
+        </div>
+        <div class="modal-body">
+  
+          <form 
+            [formGroup]="formSellerAdd"
+                autocomplete="false" 
+                novalidate="true"
+                >
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">Mã Số Thuế A</label>
+              <input 
+                    type="number"
+                    class="form-control"
+                   name="txtMSTA" 
+                   formControlName="MSTA"
+                   [(ngModel)]="seller.MSTA"
+                      >
+            </div>
+                  <span class="label label-danger" 
+                  *ngIf="formSellerAdd.controls.MSTA.dirty
+                    && formSellerAdd.controls.MSTA.errors?.required">Vui lòng nhập TMã Số Thuế A</span>
+            <div class="form-group">
+              <label for="recipient-name" class="control-label" >Tên Khách Hàng A</label>
+              <input 
+              type="text"
+                  
+              class="form-control"
+             
+               name="txtTenA" 
+               formControlName="TenA" [(ngModel)]="seller.TenA" >
+            </div>
+                  <span class="label label-danger" 
+                  *ngIf="formSellerAdd.controls.TenA.dirty
+                    && formSellerAdd.controls.TenA.errors?.required">Vui lòng nhập Tên Khách Hàng A</span>
+            <div class="form-group">
+                <label for="recipient-name" class="control-label" >Địa Chỉ A</label>
+                <input 
+                type="text"
+                  
+                class="form-control"
+               
+                 name="txtDiaChiA" 
+                 formControlName="DiaChiA"  [(ngModel)]="seller.DiaChiA">
+              </div>
+                      <span class="label label-danger" 
+                      *ngIf="formSellerAdd.controls.DiaChiA.dirty
+                        && formSellerAdd.controls.DiaChiA.errors?.required">Vui lòng nhập Địa Chỉ A</span>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label" >Chữ Ký Số A</label>
+                <input 
+                          type="text"
+                          class="form-control"
+                          name="txtCKSA" 
+                          formControlName="CKSA" [(ngModel)]="seller.CKSA" >
+              </div>
+                    <span class="label label-danger" 
+                    *ngIf="formSellerAdd.controls.CKSA.dirty
+                      && formSellerAdd.controls.CKSA.errors?.required">Vui lòng nhập Chữ Ký Số A</span>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label" >Chữ Ký Điện Tử A</label>
+                <input 
+                        type="text"
+                        class="form-control"               
+                        name="txtCKDTA" 
+                        formControlName="CKDTA"  [(ngModel)]="seller.CKDTA">
+              </div>
+              <span class="label label-danger" 
+                    *ngIf="formSellerAdd.controls.CKDTA.dirty
+                      && formSellerAdd.controls.CKDTA.errors?.required">Vui lòng nhập Chữ Ký Điện Tử A</span>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label" >Mã Cơ Quan Thuế	</label>
+                    <input 
+                          type="text"                            
+                          class="form-control"                       
+                          name="txtMaCQT" 
+                          formControlName="MaCQT" [(ngModel)]="seller.MaCQT" 
+                 >
+              </div>
+                    <span class="label label-danger" 
+                    *ngIf="formSellerAdd.controls.MaCQT.dirty
+                    && formSellerAdd.controls.MaCQT.errors?.required">Vui lòng nhập Mã Cơ Quan thuế</span>
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button   (click)="onResetForm()" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="onAddSeller()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

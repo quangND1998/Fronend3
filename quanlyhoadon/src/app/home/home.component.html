@@ -1,0 +1,51 @@
+
+            <body>
+                <div class="header">
+                    <img src="assets/images/Capture1.PNG" alt="" class='Capture' >
+                   
+               
+                <div id="menu" style="display: -webkit-inline-flex;">
+                    <ul>
+                      <li >
+                          <a [routerLink]="['/customers']" > Quản lý người dùng </a>|</li>
+                        <li> 
+                            <a [routerLink]="['/taxAuthorities']">Quản lý danh mục</a>|</li>
+                    <li>
+                        <a [routerLink]="['/recipts']">Quản lý hóa đơn</a>|</li>
+                  
+                    <li> 
+                        <a [routerLink]="['/mauhoadon']" routerLinkActive="router-link-active"  >Báo Cáo</a>|</li>
+                    <li>
+                        <a href="" >Thống Kê</a>|</li>
+                   <li>        
+                       <a href="" >Tra Cứu</a>|</li>
+                   <li>
+                    <a href="" >Download</a>|</li>
+                   
+                        <li><a href="" >Hàng</a>|</li>
+                        <li routerLinkActive="active"  (click)="onLogOut()" ><a >Log Out</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="contanier">
+                    <div class='left'>
+                        <div class="boxct"> 
+                            <span> <img src="assets/images/Capture.PNG" alt="" width="30px" height="30px " style="margin-left: 10px ;float: left;"></span>
+                            <span style="color: white;">Công ty</span>
+                           <div id="list" style="margin-top: 15px ;width: auto;" >
+                            <ul>
+                                <li><a [routerLink]="['/sellers']"><img src="assets/images/user.PNG" alt="" style="padding-top: 5px;padding-left: 10px;"> mục khách hàng</a></li>
+                                <li> <a [routerLink]="['/products']"> <img src="assets/images/document.PNG" alt="" style="padding-top: 5px;padding-left: 10px;">Danh mục hàng hóa</a></li>
+                                <li> <a [routerLink]="['/chitiethoadon']" routerLinkActive="router-link-active" > <img src="assets/images/danhmuc.PNG" alt="" style="padding-top: 5px;padding-left: 10px;">Chi Tiết Hóa Đơn</a></li>
+                            </ul>
+                           </div>
+                        </div>
+                    </div>
+                    
+                    <div class='right'>
+                     
+                        
+        
+                    </div>
+                </div>
+            </body>

@@ -1,0 +1,43 @@
+
+<div class="alert alert-danger" *ngIf='erro==-1'>
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <strong>{{waning}}</strong> 
+</div>
+<body style= "background-color:#8A2BE2 ; height: 2000px; width: 2000px;">
+    <div class ="body" style="display :inline-flex ">
+        
+        <div >
+            
+            <img class="email" src="assets/images/emailcion.png" width="auto" height="auto">
+        </div>
+        <div>
+            <img src="assets/images/Capture1.PNG" alt="" class='Capture' width="300px">
+           
+            <div  >
+                <input  class='checkbox' type="number" placeholder="Nhập mã số thuế.." id=""  [(ngModel)]="userlogin.MSTA"  [ngModelOptions]="{standalone: true}">
+            </div  >
+            <div  >
+                <input  class='checkbox' type="text"  placeholder="Nhập tài khoản đăng nhập..." id=""  [(ngModel)]="userlogin.TenDN"  [ngModelOptions]="{standalone: true}">
+            </div  >
+            <div  >
+                <input class='checkbox' type="password"  placeholder="Nhập mật khẩu..."id=""  [(ngModel)]="userlogin.password"  [ngModelOptions]="{standalone: true}">
+            </div  >
+
+
+                
+             <button class='button' type="submit"  (click)="onLogin()">Đăng nhập</button>
+        </div>
+
+     <div>
+        <span id="nabar">
+
+            <a [routerLink]="['/register']" routerLinkActive="router-link-active"  style="color:black">Đăng ký</a>|
+            
+            <a href="#about" style="color:black">Mẫu Đăng Ký</a>|
+            
+            
+        </span>
+     </div>
+    </div>
+    
+</body>
